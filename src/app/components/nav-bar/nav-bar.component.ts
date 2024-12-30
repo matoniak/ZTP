@@ -25,19 +25,15 @@ export class NavBarComponent {
         icon: 'pi pi-star',
       },
       {
-        label: 'join us',
+        label: 'Join us',
         icon: 'pi pi-star',
       },
       {
-        label: 'Offer',
+        label: 'Our offer',
         icon: 'pi pi-envelope',
       },
       {
-        label: 'Pricing',
-        icon: 'pi pi-envelope',
-      },
-      {
-        label: 'Contact',
+        label: 'Pricing plans',
         icon: 'pi pi-envelope',
       },
       {
