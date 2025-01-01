@@ -4,12 +4,10 @@ import { StyleClassModule } from 'primeng/styleclass';
 
 import { HomePageComponent } from './pages/home-page/home-page.component';
 
-const pagesComponents = [HomePageComponent];
-
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [StyleClassModule, ...pagesComponents],
+  imports: [StyleClassModule, HomePageComponent],
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {

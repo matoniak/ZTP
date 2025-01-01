@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { MenubarModule } from 'primeng/menubar';
 import { BadgeModule } from 'primeng/badge';
 import { MenuItem } from 'primeng/api';
+import { NgClass } from '@angular/common';
 import { StyleClassModule } from 'primeng/styleclass';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'nav-bar',
   standalone: true,
-  imports: [CommonModule, MenubarModule, BadgeModule, StyleClassModule],
+  imports: [StyleClassModule, MenubarModule, BadgeModule, NgClass],
   templateUrl: './nav-bar.component.html',
 })
 export class NavBarComponent {

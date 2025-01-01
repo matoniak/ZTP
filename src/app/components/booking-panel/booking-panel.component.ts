@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
+import { SelectButtonModule } from 'primeng/selectbutton';
 
 @Component({
   selector: 'booking-panel',
   standalone: true,
-  imports: [],
+  imports: [SelectButtonModule],
   templateUrl: './booking-panel.component.html',
 })
 export class BookingPanelComponent {
