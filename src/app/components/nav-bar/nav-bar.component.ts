@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MenubarModule } from 'primeng/menubar';
 import { BadgeModule } from 'primeng/badge';
 import { MenuItem } from 'primeng/api';
@@ -8,6 +8,7 @@ import { StyleClassModule } from 'primeng/styleclass';
 @Component({
   selector: 'nav-bar',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [StyleClassModule, MenubarModule, BadgeModule, NgClass],
   templateUrl: './nav-bar.component.html',
 })

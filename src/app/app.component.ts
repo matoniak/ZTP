@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { PrimeNG } from 'primeng/config';
 import { StyleClassModule } from 'primeng/styleclass';
 
@@ -7,8 +7,9 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 @Component({
   selector: 'app-root',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [StyleClassModule, HomePageComponent],
-  templateUrl: './app.component.html',
+  template: `<home-page></home-page>`,
 })
 export class AppComponent implements OnInit {
   constructor(private primeng: PrimeNG) {}

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AboutUsComponent } from 'src/app/components/about-us/about-us.component';
 import { FaqComponent } from 'src/app/components/faq/faq.component';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
@@ -22,6 +22,7 @@ const components = [
 @Component({
   selector: 'home-page',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [...components],
   template: `<nav-bar></nav-bar>
     <main>
