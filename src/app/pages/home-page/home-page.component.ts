@@ -24,15 +24,15 @@ const components = [
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [...components],
-  template: `<nav-bar></nav-bar>
+  template: `<nav-bar />
     <main>
-      <hero></hero>
-      <about-us></about-us>
-      <join-us></join-us>
-      <offer></offer>
-      <pricing></pricing>
-      <faq></faq>
+      <hero />
+      <about-us />
+      <join-us />
+      <offer />
+      <pricing />
+      <faq />
     </main>
-    <page-footer></page-footer> `,
+    <page-footer />`,
 })
 export class HomePageComponent {}

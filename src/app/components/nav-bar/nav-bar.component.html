@@ -2,8 +2,7 @@
   <ng-template #start>
     <img
       src="assets/images/joystick.png"
-      alt=""
-      class="" />
+      alt="game pad logo" />
   </ng-template>
   <ng-template
     #item
@@ -11,6 +10,7 @@
     let-root="root">
     <a
       pRipple
+      href="#{{ item.href }}"
       class="flex items-center p-menubar-item-link">
       <span>{{ item.label }}</span>
       @if (item.badge) {

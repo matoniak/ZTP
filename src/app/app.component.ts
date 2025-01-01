@@ -9,7 +9,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [StyleClassModule, HomePageComponent],
-  template: `<home-page></home-page>`,
+  template: `<home-page />`,
 })
 export class AppComponent implements OnInit {
   constructor(private primeng: PrimeNG) {}
