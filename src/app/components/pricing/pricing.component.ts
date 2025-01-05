@@ -30,7 +30,7 @@ export class PricingComponent {
 
   constructor(private gameRoomBookingService: GameRoomBookingService) {}
 
-  onBookRoom() {
+  bookRoom() {
     if (this.bookRoomForm.valid) return console.log('form not valid');
 
     const formValue: RoomBookingItem = this.bookRoomForm.value as RoomBookingItem;

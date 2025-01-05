@@ -90,7 +90,16 @@
         label="Book room"
         aria-label="Book room"
         icon="pi pi-user"
-        class="w-full"></button>
+        class="w-full mb-3"></button>
+
+      <button
+        pButton
+        pRipple
+        (click)="cancel.emit()"
+        label="Cancel"
+        aria-label="Cancel room booking"
+        icon="pi pi-user"
+        class="w-full p-button-outlined"></button>
     </div>
   </p-card>
 }

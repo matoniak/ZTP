@@ -144,7 +144,8 @@
 
 <form [formGroup]="bookRoomForm">
   <booking-panel
-    (save)="onBookRoom()"
+    (save)="bookRoom()"
+    (cancel)="showBookPanel = false"
     [showBookPanel]="showBookPanel"
     [bookRoomFormName]="bookRoomForm.controls.name"
     [bookRoomFormSurname]="bookRoomForm.controls.surname"

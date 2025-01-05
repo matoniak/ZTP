@@ -45,6 +45,8 @@ export class RoomBookingFormComponent {
 
   @Output() save = new EventEmitter<void>();
 
+  @Output() cancel = new EventEmitter<void>();
+
   value: number | undefined = undefined;
 
   paymentOptions: any[] = [
