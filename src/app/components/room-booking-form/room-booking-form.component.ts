@@ -13,6 +13,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgClass } from '@angular/common';
 import { DatePickerModule } from 'primeng/datepicker';
+import { CardModule } from 'primeng/card';
 
 @Component({
   selector: 'booking-panel',
@@ -27,6 +28,7 @@ import { DatePickerModule } from 'primeng/datepicker';
     FormsModule,
     NgClass,
     DatePickerModule,
+    CardModule,
   ],
   templateUrl: './room-booking-form.component.html',
 })
