@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PricingComponent } from './pricing.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('PricingComponent', () => {
   let component: PricingComponent;
@@ -8,7 +9,7 @@ describe('PricingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PricingComponent],
+      imports: [PricingComponent, HttpClientModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PricingComponent);

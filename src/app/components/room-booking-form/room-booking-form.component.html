@@ -1,0 +1,96 @@
+@if (showBookPanel()) {
+  <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
+    <div>
+      <label
+        for="name"
+        class="block text-900 font-medium mb-2"
+        >Name</label
+      >
+      <input
+        pInputText
+        id="name"
+        [formControl]="bookRoomFormName"
+        type="text"
+        placeholder="Enter your name"
+        pInputText
+        [ngClass]="{
+          'ng-invalid ng-dirty': bookRoomFormSurname.invalid && bookRoomFormSurname.touched,
+        }"
+        class="w-full mb-3" />
+
+      @if (bookRoomFormName.invalid && bookRoomFormName.touched) {
+        <div class="validation-error">Name is required.</div>
+      }
+
+      <label
+        for="surname"
+        class="block text-900 font-medium mb-2"
+        >Surname</label
+      >
+      <input
+        pInputText
+        id="surname"
+        [formControl]="bookRoomFormSurname"
+        type="text"
+        placeholder="Enter your surname"
+        pInputText
+        [ngClass]="{
+          'ng-invalid ng-dirty': bookRoomFormSurname.invalid && bookRoomFormSurname.touched,
+        }"
+        class="w-full mb-3" />
+
+      @if (bookRoomFormSurname.invalid && bookRoomFormSurname.touched) {
+        <div class="validation-error">Surname is required.</div>
+      }
+
+      <label
+        for="package"
+        class="block text-900 font-medium mb-2"
+        >Select start date</label
+      >
+      <p-datepicker
+        [(ngModel)]="bookRoomFormStartDate"
+        [showIcon]="true"
+        inputId="buttondisplay"
+        [showOnFocus]="false"
+        placeholder="Date"
+        class="mb-3" />
+
+      <label
+        for="package"
+        class="block text-900 font-medium mb-2"
+        >Select end date</label
+      >
+      <p-datepicker
+        [(ngModel)]="bookRoomFormEndDate"
+        [showIcon]="true"
+        inputId="buttondisplay"
+        [showOnFocus]="false"
+        placeholder="Date"
+        class="mb-3" />
+
+      <label
+        for="package"
+        class="block text-900 font-medium mb-2"
+        >Set package</label
+      >
+      <p-selectbutton
+        [options]="paymentOptions"
+        (ngModel)="(value)"
+        [multiple]="true"
+        class="mb-3"
+        id="package"
+        optionLabel="name"
+        optionValue="value" />
+
+      <button
+        pButton
+        pRipple
+        (click)="save.emit()"
+        label="Book room"
+        aria-label="Book room"
+        icon="pi pi-user"
+        class="w-full"></button>
+    </div>
+  </div>
+}

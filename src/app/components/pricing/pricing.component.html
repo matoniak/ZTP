@@ -142,6 +142,12 @@
   </div>
 </div>
 
-<!-- <booking-panel
-  [showBookPanel]="showBookPanel"
-  [bookRoomForm]="bookRoomForm.controls" /> -->
+<form [formGroup]="bookRoomForm">
+  <booking-panel
+    (save)="onBookRoom()"
+    [showBookPanel]="showBookPanel"
+    [bookRoomFormName]="bookRoomForm.controls.name"
+    [bookRoomFormSurname]="bookRoomForm.controls.surname"
+    [bookRoomFormStartDate]="bookRoomForm.controls.startDate"
+    [bookRoomFormEndDate]="bookRoomForm.controls.endDate" />
+</form>
