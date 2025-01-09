@@ -1,141 +1,179 @@
-<div
-  class="surface-ground px-4 py-8 md:px-6 lg:px-8"
-  id="pricing-plans">
-  <div class="text-900 font-bold text-6xl mb-4 text-center">Pricing Plans</div>
-  <div class="text-700 text-xl mb-6 text-center line-height-3">
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit numquam eligendi quos.
-  </div>
-
-  <div class="grid">
-    <div class="col-12 lg:col-4">
-      <div class="p-3 h-full">
-        <div
-          class="shadow-2 p-3 h-full flex flex-column surface-card"
-          style="border-radius: 6px">
-          <div class="text-900 font-medium text-xl mb-2">Basic</div>
-          <div class="text-600">Plan description</div>
-          <hr class="my-3 mx-0 border-top-1 border-none surface-border" />
-          <div class="flex align-items-center">
-            <span class="font-bold text-2xl text-900">$9</span>
-            <span class="ml-2 font-medium text-600">per month</span>
-          </div>
-          <hr class="my-3 mx-0 border-top-1 border-none surface-border" />
-          <ul class="list-none p-0 m-0 flex-grow-1">
-            <li class="flex align-items-center mb-3">
-              <i class="pi pi-check-circle text-green-500 mr-2"></i>
-              <span class="text-900">Arcu vitae elementum</span>
-            </li>
-            <li class="flex align-items-center mb-3">
-              <i class="pi pi-check-circle text-green-500 mr-2"></i>
-              <span class="text-900">Dui faucibus in ornare</span>
-            </li>
-            <li class="flex align-items-center mb-3">
-              <i class="pi pi-check-circle text-green-500 mr-2"></i>
-              <span class="text-900">Morbi tincidunt augue</span>
-            </li>
-          </ul>
-          <hr class="mb-3 mx-0 border-top-1 border-none surface-border mt-auto" />
-          <button
-            pButton
-            pRipple
-            (click)="showBookPanel = !showBookPanel"
-            label="Buy Now"
-            aria-label="Buy Now"
-            class="p-3 w-full mt-auto"></button>
-        </div>
-      </div>
+<div class="p-container">
+  <div
+    class="surface-ground px-4 py-8 md:px-6 lg:px-8"
+    id="pricing-plans">
+    <div class="text-900 font-bold text-6xl mb-4 text-center">Pricing Plans</div>
+    <div class="text-700 text-xl mb-6 text-center line-height-3">
+      Choose the perfect plan for your gaming experience, food, and room customization. Whether
+      you're a casual player, a competitive gamer, or hosting an event, we have options that fit
+      your needs.
     </div>
 
-    <div class="col-12 lg:col-4">
-      <div class="p-3 h-full">
-        <div
-          class="shadow-2 p-3 h-full flex flex-column surface-card"
-          style="border-radius: 6px">
-          <div class="text-900 font-medium text-xl mb-2">Premium</div>
-          <div class="text-600">Plan description</div>
-          <hr class="my-3 mx-0 border-top-1 border-none surface-border" />
-          <div class="flex align-items-center">
-            <span class="font-bold text-2xl text-900">$29</span>
-            <span class="ml-2 font-medium text-600">per month</span>
+    <div class="grid">
+      <!-- Basic Plan -->
+      <div class="col-12 lg:col-4">
+        <div class="p-3 h-full">
+          <div
+            class="shadow-2 p-3 h-full flex flex-column surface-card"
+            style="border-radius: 6px">
+            <div class="text-900 font-medium text-xl mb-2">Basic</div>
+            <div class="text-600">
+              For casual gamers who want to enjoy gaming and food in a relaxed setting.
+            </div>
+            <hr class="my-3 mx-0 border-top-1 border-none surface-border" />
+            <div class="flex align-items-center">
+              <span class="font-bold text-2xl text-900">$9</span>
+              <span class="ml-2 font-medium text-600">per month</span>
+            </div>
+            <hr class="my-3 mx-0 border-top-1 border-none surface-border" />
+            <ul class="list-none p-0 m-0 flex-grow-1">
+              <li class="flex align-items-center mb-3">
+                <i class="pi pi-check-circle text-green-500 mr-2"></i>
+                <span class="text-900">1 Hour of Gaming Time</span>
+              </li>
+              <li class="flex align-items-center mb-3">
+                <i class="pi pi-check-circle text-green-500 mr-2"></i>
+                <span class="text-900">Standard Gaming Setup</span>
+              </li>
+              <li class="flex align-items-center mb-3">
+                <i class="pi pi-check-circle text-green-500 mr-2"></i>
+                <span class="text-900">Access to Selected Games</span>
+              </li>
+              <li class="flex align-items-center mb-3">
+                <i class="pi pi-check-circle text-green-500 mr-2"></i>
+                <span class="text-900">Choice of Snacks and Drinks</span>
+              </li>
+              <li class="flex align-items-center mb-3">
+                <i class="pi pi-check-circle text-green-500 mr-2"></i>
+                <span class="text-900">Standard Room Customization</span>
+              </li>
+            </ul>
+            <hr class="mb-3 mx-0 border-top-1 border-none surface-border mt-auto" />
+            <button
+              pButton
+              pRipple
+              (click)="showBookPanel = !showBookPanel"
+              label="Buy Now"
+              aria-label="Buy Now"
+              class="p-3 w-full mt-auto"></button>
           </div>
-          <hr class="my-3 mx-0 border-top-1 border-none surface-border" />
-          <ul class="list-none p-0 m-0 flex-grow-1">
-            <li class="flex align-items-center mb-3">
-              <i class="pi pi-check-circle text-green-500 mr-2"></i>
-              <span class="text-900">Arcu vitae elementum</span>
-            </li>
-            <li class="flex align-items-center mb-3">
-              <i class="pi pi-check-circle text-green-500 mr-2"></i>
-              <span class="text-900">Dui faucibus in ornare</span>
-            </li>
-            <li class="flex align-items-center mb-3">
-              <i class="pi pi-check-circle text-green-500 mr-2"></i>
-              <span class="text-900">Morbi tincidunt augue</span>
-            </li>
-            <li class="flex align-items-center mb-3">
-              <i class="pi pi-check-circle text-green-500 mr-2"></i>
-              <span class="text-900">Duis ultricies lacus sed</span>
-            </li>
-          </ul>
-          <hr class="mb-3 mx-0 border-top-1 border-none surface-border" />
-          <button
-            pButton
-            pRipple
-            (click)="showBookPanel = !showBookPanel"
-            label="Buy Now"
-            aria-label="Buy Now"
-            class="p-3 w-full"></button>
         </div>
       </div>
-    </div>
 
-    <div class="col-12 lg:col-4">
-      <div class="p-3 h-full">
-        <div
-          class="shadow-2 p-3 flex flex-column surface-card"
-          style="border-radius: 6px">
-          <div class="text-900 font-medium text-xl mb-2">Enterprise</div>
-          <div class="text-600">Plan description</div>
-          <hr class="my-3 mx-0 border-top-1 border-none surface-border" />
-          <div class="flex align-items-center">
-            <span class="font-bold text-2xl text-900">$49</span>
-            <span class="ml-2 font-medium text-600">per month</span>
+      <!-- Premium Plan -->
+      <div class="col-12 lg:col-4">
+        <div class="p-3 h-full">
+          <div
+            class="shadow-2 p-3 h-full flex flex-column surface-card"
+            style="border-radius: 6px">
+            <div class="text-900 font-medium text-xl mb-2">Premium</div>
+            <div class="text-600">
+              For dedicated gamers who want more time, top-quality setup, and gourmet food options.
+            </div>
+            <hr class="my-3 mx-0 border-top-1 border-none surface-border" />
+            <div class="flex align-items-center">
+              <span class="font-bold text-2xl text-900">$29</span>
+              <span class="ml-2 font-medium text-600">per month</span>
+            </div>
+            <hr class="my-3 mx-0 border-top-1 border-none surface-border" />
+            <ul class="list-none p-0 m-0 flex-grow-1">
+              <li class="flex align-items-center mb-3">
+                <i class="pi pi-check-circle text-green-500 mr-2"></i>
+                <span class="text-900">3 Hours of Gaming Time</span>
+              </li>
+              <li class="flex align-items-center mb-3">
+                <i class="pi pi-check-circle text-green-500 mr-2"></i>
+                <span class="text-900">Premium Gaming Setup</span>
+              </li>
+              <li class="flex align-items-center mb-3">
+                <i class="pi pi-check-circle text-green-500 mr-2"></i>
+                <span class="text-900">Access to All Available Games</span>
+              </li>
+              <li class="flex align-items-center mb-3">
+                <i class="pi pi-check-circle text-green-500 mr-2"></i>
+                <span class="text-900">Priority Support</span>
+              </li>
+              <li class="flex align-items-center mb-3">
+                <i class="pi pi-check-circle text-green-500 mr-2"></i>
+                <span class="text-900">Gourmet Food and Drinks</span>
+              </li>
+              <li class="flex align-items-center mb-3">
+                <i class="pi pi-check-circle text-green-500 mr-2"></i>
+                <span class="text-900">Advanced Room Customization</span>
+              </li>
+            </ul>
+            <hr class="mb-3 mx-0 border-top-1 border-none surface-border" />
+            <button
+              pButton
+              pRipple
+              (click)="showBookPanel = !showBookPanel"
+              label="Buy Now"
+              aria-label="Buy Now"
+              class="p-3 w-full"></button>
           </div>
-          <hr class="my-3 mx-0 border-top-1 border-none surface-border" />
-          <ul class="list-none p-0 m-0 flex-grow-1">
-            <li class="flex align-items-center mb-3">
-              <i class="pi pi-check-circle text-green-500 mr-2"></i>
-              <span class="text-900">Arcu vitae elementum</span>
-            </li>
-            <li class="flex align-items-center mb-3">
-              <i class="pi pi-check-circle text-green-500 mr-2"></i>
-              <span class="text-900">Dui faucibus in ornare</span>
-            </li>
-            <li class="flex align-items-center mb-3">
-              <i class="pi pi-check-circle text-green-500 mr-2"></i>
-              <span class="text-900">Morbi tincidunt augue</span>
-            </li>
-            <li class="flex align-items-center mb-3">
-              <i class="pi pi-check-circle text-green-500 mr-2"></i>
-              <span class="text-900">Duis ultricies lacus sed</span>
-            </li>
-            <li class="flex align-items-center mb-3">
-              <i class="pi pi-check-circle text-green-500 mr-2"></i>
-              <span class="text-900">Imperdiet proin</span>
-            </li>
-            <li class="flex align-items-center mb-3">
-              <i class="pi pi-check-circle text-green-500 mr-2"></i>
-              <span class="text-900">Nisi scelerisque</span>
-            </li>
-          </ul>
-          <hr class="mb-3 mx-0 border-top-1 border-none surface-border" />
-          <button
-            pButton
-            pRipple
-            (click)="showBookPanel = !showBookPanel"
-            label="Buy Now"
-            aria-label="Buy Now"
-            class="p-3 w-full p-button-outlined"></button>
+        </div>
+      </div>
+
+      <!-- Enterprise Plan -->
+      <div class="col-12 lg:col-4">
+        <div class="p-3 h-full">
+          <div
+            class="shadow-2 p-3 flex flex-column surface-card"
+            style="border-radius: 6px">
+            <div class="text-900 font-medium text-xl mb-2">Enterprise</div>
+            <div class="text-600">
+              For corporate events, tournaments, and large-scale gaming experiences with full
+              customization and catering services.
+            </div>
+            <hr class="my-3 mx-0 border-top-1 border-none surface-border" />
+            <div class="flex align-items-center">
+              <span class="font-bold text-2xl text-900">$49</span>
+              <span class="ml-2 font-medium text-600">per month</span>
+            </div>
+            <hr class="my-3 mx-0 border-top-1 border-none surface-border" />
+            <ul class="list-none p-0 m-0 flex-grow-1">
+              <li class="flex align-items-center mb-3">
+                <i class="pi pi-check-circle text-green-500 mr-2"></i>
+                <span class="text-900">Unlimited Gaming Time</span>
+              </li>
+              <li class="flex align-items-center mb-3">
+                <i class="pi pi-check-circle text-green-500 mr-2"></i>
+                <span class="text-900">Exclusive VIP Setup</span>
+              </li>
+              <li class="flex align-items-center mb-3">
+                <i class="pi pi-check-circle text-green-500 mr-2"></i>
+                <span class="text-900">Access to All Premium & Exclusive Games</span>
+              </li>
+              <li class="flex align-items-center mb-3">
+                <i class="pi pi-check-circle text-green-500 mr-2"></i>
+                <span class="text-900">Dedicated Event Coordinator</span>
+              </li>
+              <li class="flex align-items-center mb-3">
+                <i class="pi pi-check-circle text-green-500 mr-2"></i>
+                <span class="text-900">Customizable Gaming Packages</span>
+              </li>
+              <li class="flex align-items-center mb-3">
+                <i class="pi pi-check-circle text-green-500 mr-2"></i>
+                <span class="text-900">Premium Support & Service</span>
+              </li>
+              <li class="flex align-items-center mb-3">
+                <i class="pi pi-check-circle text-green-500 mr-2"></i>
+                <span class="text-900">Full Room Customization & Theme</span>
+              </li>
+              <li class="flex align-items-center mb-3">
+                <i class="pi pi-check-circle text-green-500 mr-2"></i>
+                <span class="text-900">Tailored Catering & Gourmet Menus</span>
+              </li>
+            </ul>
+            <hr class="mb-3 mx-0 border-top-1 border-none surface-border" />
+            <button
+              pButton
+              pRipple
+              (click)="showBookPanel = !showBookPanel"
+              label="Buy Now"
+              aria-label="Buy Now"
+              class="p-3 w-full p-button-outlined"></button>
+          </div>
         </div>
       </div>
     </div>
