@@ -1,21 +1,5 @@
+@use 'app/styles/font' as *;
+@use 'app/styles/validation' as *;
+
 @import 'primeicons/primeicons.css';
 @import 'primeflex/primeflex.css';
-
-:root {
-  --font-family: 'Roboto', sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: var(--font-family);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.validation-error {
-  color: #fca5a5;
-  margin-bottom: 1rem;
-}
