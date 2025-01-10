@@ -10,10 +10,19 @@ import { ButtonModule } from 'primeng/button';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { CheckboxModule } from 'primeng/checkbox';
 import { InputTextModule } from 'primeng/inputtext';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { NgClass } from '@angular/common';
 import { DatePickerModule } from 'primeng/datepicker';
 import { CardModule } from 'primeng/card';
+import { GameRoomBookingService } from 'src/app/services/game-room-booking.service';
+import { RoomBookingItem } from 'src/app/interfaces/room-booking.interface';
+import { PricingPlans } from 'src/app/enums/pricing-plans.enum';
 
 @Component({
   selector: 'booking-panel',
@@ -29,29 +38,63 @@ import { CardModule } from 'primeng/card';
     NgClass,
     DatePickerModule,
     CardModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   templateUrl: './room-booking-form.component.html',
 })
 export class RoomBookingFormComponent {
   showBookPanel = input(false);
 
-  @Input() bookRoomFormName!: FormControl;
+  @Output() cancel = new EventEmitter();
 
-  @Input() bookRoomFormSurname!: FormControl;
+  value: number | undefined;
 
-  @Input() bookRoomFormStartDate!: FormControl;
-
-  @Input() bookRoomFormEndDate!: FormControl;
-
-  @Output() save = new EventEmitter<void>();
-
-  @Output() cancel = new EventEmitter<void>();
-
-  value: number | undefined = undefined;
-
-  paymentOptions: any[] = [
-    { name: 'Basic', value: 1 },
-    { name: 'Premium', value: 2 },
-    { name: 'Enterprise', value: 3 },
+  stateOptions: any[] = [
+    { label: 'Basic', value: 1 },
+    { label: 'Premium', value: 2 },
+    { label: 'Enterprise', value: 3 },
   ];
+
+  readonly bookRoomForm = new FormGroup({
+    name: new FormControl('', Validators.required),
+    surname: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    startDate: new FormControl('', Validators.required),
+    endDate: new FormControl('', Validators.required),
+    pricingPlans: new FormControl(undefined, Validators.required),
+  });
+
+  constructor(private gameRoomBookingService: GameRoomBookingService) {}
+
+  bookRoom() {
+    if (this.bookRoomForm.valid) return console.log('form not valid');
+
+    const formValue: RoomBookingItem = this.bookRoomForm.value as RoomBookingItem;
+
+    const payload: RoomBookingItem = {
+      name: formValue.name,
+      surname: formValue.surname,
+      startDate: formValue.startDate,
+      endDate: formValue.endDate,
+      pricingPlans: this.setPlaningPlan(this.value) || undefined,
+    };
+
+    this.gameRoomBookingService.addBooking(payload).subscribe({
+      next: response => {
+        console.log('Form successfully submitted!', response);
+      },
+      error: error => {
+        console.error('Error occurred:', error);
+      },
+    });
+  }
+
+  private setPlaningPlan(value: number | undefined) {
+    if (value === 1) return PricingPlans.Basic;
+    if (value === 2) return PricingPlans.Premium;
+    if (value === 3) return PricingPlans.Enterprise;
+
+    return undefined;
+  }
 }

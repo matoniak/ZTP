@@ -180,13 +180,6 @@
   </div>
 </div>
 
-<form [formGroup]="bookRoomForm">
-  <booking-panel
-    (save)="bookRoom()"
-    (cancel)="showBookPanel = false"
-    [showBookPanel]="showBookPanel"
-    [bookRoomFormName]="bookRoomForm.controls.name"
-    [bookRoomFormSurname]="bookRoomForm.controls.surname"
-    [bookRoomFormStartDate]="bookRoomForm.controls.startDate"
-    [bookRoomFormEndDate]="bookRoomForm.controls.endDate" />
-</form>
+<booking-panel
+  (cancel)="showBookPanel = false"
+  [showBookPanel]="showBookPanel" />
