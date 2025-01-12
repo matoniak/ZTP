@@ -24,6 +24,6 @@ describe('JoinUsComponent', () => {
     const spy = spyOn(window, 'open').and.callThrough();
     const button = fixture.nativeElement.querySelector('button');
     button.click();
-    expect(spy).toHaveBeenCalledWith('https://discord.com', '_blank');  
+    expect(spy).toHaveBeenCalledWith('https://discord.com', '_blank');
   });
 });
