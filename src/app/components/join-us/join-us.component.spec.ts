@@ -19,4 +19,11 @@ describe('JoinUsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should open discord in a new tab when button is clicked', () => {
+    const spy = spyOn(window, 'open').and.callThrough();
+    const button = fixture.nativeElement.querySelector('button');
+    button.click();
+    expect(spy).toHaveBeenCalledWith('https://discord.com', '_blank');  
+  });
 });
