@@ -8,4 +8,8 @@ import { ButtonModule } from 'primeng/button';
   imports: [ButtonModule],
   templateUrl: './join-us.component.html',
 })
-export class JoinUsComponent {}
+export class JoinUsComponent {
+  openDiscord() {
+    window.open('https://discord.com', '_blank');
+  }
+}
