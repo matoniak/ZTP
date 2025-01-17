@@ -30,6 +30,8 @@
     </a>
   </ng-template>
   <ng-template #end>
+    <language-switcher class="mr-3" />
+
     @if (isUserAuthorized) {
       <p-avatar
         image="./assets/images/avatar.png"
@@ -43,7 +45,7 @@
         label="Sign in"
         aria-label="Sign In"
         icon="pi pi-user"
-        class="mr-2"></button>
+        class="mr-3"></button>
 
       <button
         pButton

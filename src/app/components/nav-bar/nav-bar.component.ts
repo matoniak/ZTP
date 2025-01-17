@@ -1,3 +1,4 @@
+import { LanguageSwitcherComponent } from './../language-switcher/language-switcher.component';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MenubarModule } from 'primeng/menubar';
 import { BadgeModule } from 'primeng/badge';
@@ -25,6 +26,7 @@ import { RouterModule } from '@angular/router';
     MenuModule,
     ButtonModule,
     RouterModule,
+    LanguageSwitcherComponent,
   ],
   templateUrl: './nav-bar.component.html',
 })
