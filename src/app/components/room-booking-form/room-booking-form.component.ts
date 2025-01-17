@@ -75,6 +75,7 @@ export class RoomBookingFormComponent {
     const payload: RoomBookingItem = {
       name: formValue.name,
       surname: formValue.surname,
+      email: formValue.email,
       startDate: formValue.startDate,
       endDate: formValue.endDate,
       pricingPlans: this.setPlaningPlan(this.value) || undefined,

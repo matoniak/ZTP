@@ -12,9 +12,9 @@
     <div class="grid">
       <!-- Basic Plan -->
       <div class="col-12 lg:col-4">
-        <div class="p-3 h-full">
+        <p-card class="p-3">
           <div
-            class="shadow-2 p-3 h-full flex flex-column surface-card"
+            class="p-3 h-full flex flex-column surface-card"
             style="border-radius: 6px">
             <div class="text-900 font-medium text-xl mb-2">Basic</div>
             <div class="text-600">
@@ -57,14 +57,14 @@
               aria-label="Buy Now"
               class="p-3 w-full mt-auto"></button>
           </div>
-        </div>
+        </p-card>
       </div>
 
       <!-- Premium Plan -->
       <div class="col-12 lg:col-4">
-        <div class="p-3 h-full">
+        <p-card class="p-3">
           <div
-            class="shadow-2 p-3 h-full flex flex-column surface-card"
+            class="p-3flex flex-column surface-card"
             style="border-radius: 6px">
             <div class="text-900 font-medium text-xl mb-2">Premium</div>
             <div class="text-600">
@@ -111,14 +111,14 @@
               aria-label="Buy Now"
               class="p-3 w-full"></button>
           </div>
-        </div>
+        </p-card>
       </div>
 
       <!-- Enterprise Plan -->
       <div class="col-12 lg:col-4">
-        <div class="p-3 h-full">
+        <p-card class="p-3 h-full">
           <div
-            class="shadow-2 p-3 flex flex-column surface-card"
+            class="p-3 flex flex-column surface-card"
             style="border-radius: 6px">
             <div class="text-900 font-medium text-xl mb-2">Enterprise</div>
             <div class="text-600">
@@ -174,7 +174,7 @@
               aria-label="Buy Now"
               class="p-3 w-full p-button-outlined"></button>
           </div>
-        </div>
+        </p-card>
       </div>
     </div>
   </div>
@@ -183,3 +183,5 @@
 <booking-panel
   (cancel)="showBookPanel = false"
   [showBookPanel]="showBookPanel" />
+
+<booked-rooms (delete)="deleteBook()" />

@@ -1,1 +1,61 @@
-<p-card> <div class="p-4 bg-dark:w-6">booked-rooms</div></p-card>
+<div class="text-700 font-bold text-6xl mt-4 mb-4 text-center">Your bookings</div>
+@if (bookings.length) {
+  <div class="grid p-6">
+    @for (book of bookings; track book) {
+      <div class="col-12 lg:col-4">
+        <p-card class="p-3 h-full">
+          <div
+            class="p-3 h-full flex flex-column surface-card"
+            style="border-radius: 6px">
+            <div class="text-900 text-center align-items-center text-xl mb-4">
+              <b>{{ book.pricingPlans }}</b>
+            </div>
+
+            <div class="text-700 font-medium text-xl mb-2"><b>name:</b> {{ book.name }}</div>
+            <div class="text-700 font-medium text-xl mb-2"><b>surname:</b> {{ book.surname }}</div>
+            <div class="text-700 font-medium text-xl mb-2"><b>email:</b> {{ book.email }}</div>
+            <div class="text-700 font-medium text-xl mb-2">
+              <b>start date:</b> {{ book.startDate | date }}
+            </div>
+            <div class="text-700 font-medium text-xl mb-4">
+              <b>start date:</b> {{ book.endDate | date }}
+            </div>
+
+            <button
+              pButton
+              pRipple
+              (click)="cancel.emit()"
+              label="Edit"
+              aria-label="Edit"
+              icon="pi pi-pencil"
+              class="w-full mb-3"></button>
+
+            <button
+              pButton
+              pRipple
+              (click)="delete.emit()"
+              label="Delete"
+              aria-label="Delete"
+              icon="pi pi-trash"
+              class="w-full p-button-outlined"></button>
+          </div>
+        </p-card>
+      </div>
+    }
+  </div>
+} @else {
+  <div class="grid p-6">
+    <div class="col-12 lg:col-4">
+      <p-card class="p-3 h-full">
+        <div
+          class="p-3 text-center"
+          style="border-radius: 10px">
+          <i class="pi pi-lock text-4xl text-blue-500"></i>
+        </div>
+        <div class="text-700 text-xl mt-2 mb-4 text-center line-height-3">
+          You don't have any reservation
+        </div>
+      </p-card>
+    </div>
+  </div>
+}
