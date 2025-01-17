@@ -1,4 +1,7 @@
+.vscode/
+.angular/
+
+coverage/
 node_modules/
 dist/
-.angular/
 build/
