@@ -2,51 +2,40 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MenubarModule } from 'primeng/menubar';
 import { BadgeModule } from 'primeng/badge';
 import { MenuItem } from 'primeng/api';
-import { NgClass, NgIf } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { StyleClassModule } from 'primeng/styleclass';
+import { AvatarModule } from 'primeng/avatar';
+import { AvatarGroupModule } from 'primeng/avatargroup';
+import { MenuModule } from 'primeng/menu';
+import { navbarLinks } from '@app/shared/constants/nav-bar-items';
+import { ButtonModule } from 'primeng/button';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'nav-bar',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [StyleClassModule, MenubarModule, BadgeModule, NgClass],
+  imports: [
+    StyleClassModule,
+    MenubarModule,
+    BadgeModule,
+    NgClass,
+    AvatarModule,
+    AvatarGroupModule,
+    MenuModule,
+    ButtonModule,
+    RouterModule,
+  ],
   templateUrl: './nav-bar.component.html',
 })
 export class NavBarComponent {
   items: MenuItem[] | undefined;
 
+  isUserAuthorized = false;
+
+  isUserLoggedIn = false;
+
   ngOnInit() {
-    this.items = [
-      {
-        label: 'Home',
-        href: 'home',
-        icon: 'pi pi-home',
-      },
-      {
-        label: 'About us',
-        href: 'about-us',
-        icon: 'pi pi-star',
-      },
-      {
-        label: 'Join us',
-        href: 'join-us',
-        icon: 'pi pi-star',
-      },
-      {
-        label: 'Our offer',
-        href: 'our-offer',
-        icon: 'pi pi-envelope',
-      },
-      {
-        label: 'Pricing plans',
-        href: 'pricing-plans',
-        icon: 'pi pi-envelope',
-      },
-      {
-        label: 'FAQ',
-        href: 'faq',
-        icon: 'pi pi-envelope',
-      },
-    ];
+    this.items = navbarLinks;
   }
 }
