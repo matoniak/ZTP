@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class GameRoomBookingService {
-  private readonly url = 'https://game-bar/';
+  private readonly url = 'sqlite:///bookings.db';
 
   constructor(private http: HttpClient) {}
 
