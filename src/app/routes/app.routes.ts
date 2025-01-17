@@ -4,7 +4,7 @@ const pageTitle = 'Game bar';
 
 export const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     title: `${pageTitle} | Home`,
     loadComponent: () => import('@pages/home/home.component').then(m => m.HomePageComponent),
   },
