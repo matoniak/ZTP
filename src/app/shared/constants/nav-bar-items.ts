@@ -6,5 +6,6 @@ export const navbarLinks: MenuItem[] = [
   { label: 'Join us', href: 'join-us' },
   { label: 'Our offer', href: 'our-offer' },
   { label: 'Pricing plans', href: 'pricing-plans' },
+  { label: 'Your bookings', href: 'your-bookings' },
   { label: 'FAQ', href: 'faq' },
 ];

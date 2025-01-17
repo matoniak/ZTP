@@ -13,7 +13,9 @@ import { CardModule } from 'primeng/card';
   templateUrl: './booked-rooms.component.html',
 })
 export class BookedRoomsComponent {
-  @Output() cancel = new EventEmitter();
+  @Output() edit = new EventEmitter();
+
+  @Output() delete = new EventEmitter();
 
   bookings: RoomBookingItem[] = [
     {

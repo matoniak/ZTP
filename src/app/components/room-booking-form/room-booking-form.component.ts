@@ -1,11 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  EventEmitter,
-  Input,
-  Output,
-  input,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { CheckboxModule } from 'primeng/checkbox';
@@ -23,28 +16,33 @@ import { CardModule } from 'primeng/card';
 import { GameRoomBookingService } from '@services/game-room-booking.service';
 import { RoomBookingItem } from '@shared/interfaces/room-booking.interface';
 import { PricingPlans } from '@shared/enums/pricing-plans.enum';
+import { BookedRoomsComponent } from '../booked-rooms/booked-rooms.component';
+
+const primeNgModules = [
+  SelectButtonModule,
+  ButtonModule,
+  InputTextModule,
+  CheckboxModule,
+  FormsModule,
+  DatePickerModule,
+  CardModule,
+];
 
 @Component({
   selector: 'booking-panel',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    SelectButtonModule,
-    ButtonModule,
-    InputTextModule,
-    CheckboxModule,
+    ...primeNgModules,
     ReactiveFormsModule,
-    FormsModule,
     NgClass,
-    DatePickerModule,
-    CardModule,
-    FormsModule,
     ReactiveFormsModule,
+    BookedRoomsComponent,
   ],
   templateUrl: './room-booking-form.component.html',
 })
 export class RoomBookingFormComponent {
-  showBookPanel = input(false);
+  @Input() showBookPanel = false;
 
   @Output() cancel = new EventEmitter();
 
@@ -89,6 +87,43 @@ export class RoomBookingFormComponent {
         console.error('Error occurred:', error);
       },
     });
+  }
+
+  editRoom() {
+    this.showBookPanel = true;
+
+    if (this.bookRoomForm.valid) return console.log('form not valid');
+
+    // const payload: RoomBookingItem = {
+    //   name: this.bookRoomForm.patchValue()
+    //   surname: this.bookRoomForm.patchValue()
+    //   email: this.bookRoomForm.patchValue()
+    //   startDate: this.bookRoomForm.patchValue()
+    //   endDate: this.bookRoomForm.patchValue()
+    //   pricingPlans: this.bookRoomForm.patchValue()
+    // };
+
+    // this.gameRoomBookingService.editBooking(id).subscribe({
+    //   next: response => {
+    //     console.log('Booking successfully edited!', response);
+    //   },
+    //   error: error => {
+    //     console.error('Error occurred:', error);
+    //   },
+    // });
+  }
+
+  deleteRoom() {
+    this.showBookPanel = true;
+
+    // this.gameRoomBookingService.deleteBookingById(id).subscribe({
+    //   next: response => {
+    //     console.log('Booking successfully Deleted!', response);
+    //   },
+    //   error: error => {
+    //     console.error('Error occurred:', error);
+    //   },
+    // });
   }
 
   private setPlaningPlan(value: number | undefined) {

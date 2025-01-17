@@ -12,22 +12,20 @@ import { navbarLinks } from '@app/shared/constants/nav-bar-items';
 import { ButtonModule } from 'primeng/button';
 import { RouterModule } from '@angular/router';
 
+const primeNgModules = [
+  MenubarModule,
+  BadgeModule,
+  AvatarModule,
+  AvatarGroupModule,
+  MenuModule,
+  ButtonModule,
+];
+
 @Component({
   selector: 'nav-bar',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    StyleClassModule,
-    MenubarModule,
-    BadgeModule,
-    NgClass,
-    AvatarModule,
-    AvatarGroupModule,
-    MenuModule,
-    ButtonModule,
-    RouterModule,
-    LanguageSwitcherComponent,
-  ],
+  imports: [...primeNgModules, StyleClassModule, NgClass, RouterModule, LanguageSwitcherComponent],
   templateUrl: './nav-bar.component.html',
 })
 export class NavBarComponent {

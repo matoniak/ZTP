@@ -1,149 +1,160 @@
-@if (showBookPanel()) {
-  <p-card class="p-6">
-    <label
-      for="name"
-      class="block text-900 font-medium mb-2"
-      >Name</label
-    >
-    <input
-      pInputText
-      id="name"
-      [formControl]="bookRoomForm.controls.name"
-      type="text"
-      placeholder="Enter name"
-      pInputText
-      [ngClass]="{
-        'ng-invalid ng-dirty':
-          bookRoomForm.controls.name.invalid && bookRoomForm.controls.name.touched,
-      }"
-      class="w-full mb-3" />
+@if (showBookPanel) {
+  <div class="p-6">
+    <p-card>
+      <div class="p-3">
+        <label
+          for="name"
+          class="block text-900 font-medium mb-2"
+          >Name</label
+        >
+        <input
+          pInputText
+          id="name"
+          [formControl]="bookRoomForm.controls.name"
+          type="text"
+          placeholder="Enter name"
+          pInputText
+          [ngClass]="{
+            'ng-invalid ng-dirty':
+              bookRoomForm.controls.name.invalid && bookRoomForm.controls.name.touched,
+          }"
+          class="w-full mb-3" />
 
-    @if (bookRoomForm.controls.name.invalid && bookRoomForm.controls.name.touched) {
-      <div class="validation-error">Name is required</div>
-    }
+        @if (bookRoomForm.controls.name.invalid && bookRoomForm.controls.name.touched) {
+          <div class="validation-error">Name is required</div>
+        }
 
-    <label
-      for="surname"
-      class="block text-900 font-medium mb-2"
-      >Surname</label
-    >
-    <input
-      pInputText
-      id="surname"
-      [formControl]="bookRoomForm.controls.surname"
-      type="text"
-      placeholder="Enter surname"
-      pInputText
-      [ngClass]="{
-        'ng-invalid ng-dirty':
-          bookRoomForm.controls.surname.invalid && bookRoomForm.controls.surname.touched,
-      }"
-      class="w-full mb-3" />
+        <label
+          for="surname"
+          class="block text-900 font-medium mb-2"
+          >Surname</label
+        >
+        <input
+          pInputText
+          id="surname"
+          [formControl]="bookRoomForm.controls.surname"
+          type="text"
+          placeholder="Enter surname"
+          pInputText
+          [ngClass]="{
+            'ng-invalid ng-dirty':
+              bookRoomForm.controls.surname.invalid && bookRoomForm.controls.surname.touched,
+          }"
+          class="w-full mb-3" />
 
-    @if (bookRoomForm.controls.surname.invalid && bookRoomForm.controls.surname.touched) {
-      <div class="validation-error">Surname is required</div>
-    }
+        @if (bookRoomForm.controls.surname.invalid && bookRoomForm.controls.surname.touched) {
+          <div class="validation-error">Surname is required</div>
+        }
 
-    <label
-      for="email"
-      class="block text-900 font-medium mb-2"
-      >Email</label
-    >
-    <input
-      pInputText
-      id="email"
-      [formControl]="bookRoomForm.controls.email"
-      type="text"
-      placeholder="Enter email"
-      pInputText
-      [ngClass]="{
-        'ng-invalid ng-dirty':
-          bookRoomForm.controls.email.invalid && bookRoomForm.controls.email.touched,
-      }"
-      class="w-full mb-3" />
+        <label
+          for="email"
+          class="block text-900 font-medium mb-2"
+          >Email</label
+        >
+        <input
+          pInputText
+          id="email"
+          [formControl]="bookRoomForm.controls.email"
+          type="text"
+          placeholder="Enter email"
+          pInputText
+          [ngClass]="{
+            'ng-invalid ng-dirty':
+              bookRoomForm.controls.email.invalid && bookRoomForm.controls.email.touched,
+          }"
+          class="w-full mb-3" />
 
-    @if (bookRoomForm.controls.email.invalid && bookRoomForm.controls.email.touched) {
-      <div class="validation-error">Email is required</div>
-    }
+        @if (bookRoomForm.controls.email.invalid && bookRoomForm.controls.email.touched) {
+          <div class="validation-error">Email is required</div>
+        }
 
-    <label
-      for="package"
-      class="block text-900 font-medium mb-2"
-      >Select start date</label
-    >
-    <p-datepicker
-      [formControl]="bookRoomForm.controls.startDate"
-      [showIcon]="true"
-      inputId="buttondisplay"
-      [showOnFocus]="false"
-      [ngClass]="{
-        'ng-invalid ng-dirty':
-          bookRoomForm.controls.startDate.invalid && bookRoomForm.controls.startDate.touched,
-      }"
-      placeholder="Date" />
+        <label
+          for="package"
+          class="block text-900 font-medium mb-2"
+          >Select start date</label
+        >
+        <p-datepicker
+          [formControl]="bookRoomForm.controls.startDate"
+          [showIcon]="true"
+          inputId="buttondisplay"
+          [showOnFocus]="false"
+          [ngClass]="{
+            'ng-invalid ng-dirty':
+              bookRoomForm.controls.startDate.invalid && bookRoomForm.controls.startDate.touched,
+          }"
+          placeholder="Date" />
 
-    @if (bookRoomForm.controls.startDate.invalid && bookRoomForm.controls.startDate.touched) {
-      <div class="validation-error">Start date is required</div>
-    }
+        @if (bookRoomForm.controls.startDate.invalid && bookRoomForm.controls.startDate.touched) {
+          <div class="validation-error mt-3">Start date is required</div>
+        }
 
-    <label
-      for="package"
-      class="block text-900 font-medium mt-3 mb-2"
-      >Select end date</label
-    >
-    <p-datepicker
-      [formControl]="bookRoomForm.controls.endDate"
-      [showIcon]="true"
-      class="mb-3"
-      [ngClass]="{
-        'ng-invalid ng-dirty':
-          bookRoomForm.controls.endDate.invalid && bookRoomForm.controls.endDate.touched,
-      }"
-      inputId="buttondisplay"
-      [showOnFocus]="false"
-      placeholder="Date" />
+        <label
+          for="package"
+          class="block text-900 font-medium mt-3 mb-2"
+          >Select end date</label
+        >
+        <p-datepicker
+          [formControl]="bookRoomForm.controls.endDate"
+          [showIcon]="true"
+          class="mb-3"
+          [ngClass]="{
+            'ng-invalid ng-dirty':
+              bookRoomForm.controls.endDate.invalid && bookRoomForm.controls.endDate.touched,
+          }"
+          inputId="buttondisplay"
+          [showOnFocus]="false"
+          placeholder="Date" />
 
-    @if (bookRoomForm.controls.endDate.invalid && bookRoomForm.controls.endDate.touched) {
-      <div class="validation-error">End date is required</div>
-    }
+        @if (bookRoomForm.controls.endDate.invalid && bookRoomForm.controls.endDate.touched) {
+          <div class="validation-error mt-3">End date is required</div>
+        }
 
-    <label
-      for="package"
-      class="block text-900 font-medium mt-3 mb-2"
-      >Set pricing plan</label
-    >
+        <label
+          for="package"
+          class="block text-900 font-medium mt-3 mb-2"
+          >Set pricing plan</label
+        >
 
-    <p-selectbutton
-      [options]="stateOptions"
-      [(ngModel)]="value"
-      optionLabel="label"
-      optionValue="value"
-      class="mb-3"
-      [ngClass]="{
-        'ng-invalid ng-dirty':
-          bookRoomForm.controls.pricingPlans.invalid && bookRoomForm.controls.pricingPlans.touched,
-      }" />
+        <p-selectbutton
+          [options]="stateOptions"
+          [(ngModel)]="value"
+          optionLabel="label"
+          optionValue="value"
+          class="mb-3"
+          [ngClass]="{
+            'ng-invalid ng-dirty':
+              bookRoomForm.controls.pricingPlans.invalid &&
+              bookRoomForm.controls.pricingPlans.touched,
+          }" />
 
-    @if (bookRoomForm.controls.pricingPlans.invalid && bookRoomForm.controls.pricingPlans.touched) {
-      <div class="validation-error">Pricing plan is required</div>
-    }
+        @if (
+          bookRoomForm.controls.pricingPlans.invalid && bookRoomForm.controls.pricingPlans.touched
+        ) {
+          <div class="validation-error mt-3">Pricing plan is required</div>
+        }
 
-    <button
-      pButton
-      pRipple
-      (click)="bookRoom()"
-      label="Book room"
-      aria-label="Book room"
-      icon="pi pi-user"
-      class="w-full mb-3"></button>
+        <button
+          pButton
+          pRipple
+          (click)="bookRoom()"
+          label="Book room"
+          aria-label="Book room"
+          icon="pi pi-user"
+          class="w-full mb-3"></button>
 
-    <button
-      pButton
-      pRipple
-      (click)="cancel.emit()"
-      label="Cancel"
-      aria-label="Cancel room booking"
-      icon="pi pi-user"
-      class="w-full p-button-outlined"></button>
-  </p-card>
+        <button
+          pButton
+          pRipple
+          (click)="cancel.emit()"
+          label="Cancel"
+          aria-label="Cancel room booking"
+          icon="pi pi-user"
+          class="w-full p-button-outlined"></button>
+      </div>
+    </p-card>
+  </div>
 }
+
+<booked-rooms
+  (delete)="deleteRoom()"
+  (edit)="editRoom()" />

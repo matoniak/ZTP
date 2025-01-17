@@ -1,4 +1,8 @@
-<div class="text-700 font-bold text-6xl mt-4 mb-4 text-center">Your bookings</div>
+<div
+  class="text-700 font-bold text-6xl mt-2 text-center"
+  id="your-bookings">
+  Your bookings
+</div>
 @if (bookings.length) {
   <div class="grid p-6">
     @for (book of bookings; track book) {
@@ -24,7 +28,7 @@
             <button
               pButton
               pRipple
-              (click)="cancel.emit()"
+              (click)="edit.emit()"
               label="Edit"
               aria-label="Edit"
               icon="pi pi-pencil"
