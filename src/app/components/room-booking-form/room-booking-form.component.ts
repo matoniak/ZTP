@@ -29,7 +29,7 @@ const primeNgModules = [
 ];
 
 @Component({
-  selector: 'booking-panel',
+  selector: 'room-booking-form',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
