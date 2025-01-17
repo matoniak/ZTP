@@ -1,4 +1,3 @@
-import { NgClass, NgStyle } from '@angular/common';
 import { RoomBookingFormComponent } from '../room-booking-form/room-booking-form.component';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -11,7 +10,7 @@ const primeNgModules = [ButtonModule, FormsModule, CardModule];
   selector: 'pricing',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [...primeNgModules, RoomBookingFormComponent, ReactiveFormsModule, NgStyle],
+  imports: [...primeNgModules, RoomBookingFormComponent, ReactiveFormsModule],
   templateUrl: './pricing.component.html',
 })
 export class PricingComponent {
