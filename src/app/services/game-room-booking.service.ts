@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { RoomBookingItem } from '../interfaces/room-booking.interface';
+import { RoomBookingItem } from '@shared/interfaces/room-booking.interface';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 

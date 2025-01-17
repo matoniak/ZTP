@@ -20,9 +20,9 @@ import {
 import { NgClass } from '@angular/common';
 import { DatePickerModule } from 'primeng/datepicker';
 import { CardModule } from 'primeng/card';
-import { GameRoomBookingService } from 'src/app/services/game-room-booking.service';
-import { RoomBookingItem } from 'src/app/interfaces/room-booking.interface';
-import { PricingPlans } from 'src/app/enums/pricing-plans.enum';
+import { GameRoomBookingService } from '@services/game-room-booking.service';
+import { RoomBookingItem } from '@shared/interfaces/room-booking.interface';
+import { PricingPlans } from '@shared/enums/pricing-plans.enum';
 
 @Component({
   selector: 'booking-panel',
@@ -91,9 +91,9 @@ export class RoomBookingFormComponent {
   }
 
   private setPlaningPlan(value: number | undefined) {
-    if (value === 1) return PricingPlans.Basic;
-    if (value === 2) return PricingPlans.Premium;
-    if (value === 3) return PricingPlans.Enterprise;
+    if (value === 1) return PricingPlans.BASIC;
+    if (value === 2) return PricingPlans.PREMIUM;
+    if (value === 3) return PricingPlans.ENTERPRISE;
 
     return undefined;
   }
