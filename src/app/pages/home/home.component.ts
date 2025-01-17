@@ -35,4 +35,4 @@ const components = [
     </main>
     <page-footer />`,
 })
-export class HomeComponent {}
+export class HomePageComponent {}
