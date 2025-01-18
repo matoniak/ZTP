@@ -13,7 +13,7 @@ module.exports = function (config) {
       subdir: '.',
       reporters: [{ type: 'html' }, { type: 'text-summary' }],
     },
-    browsers: ['Chrome'],
+    browsers: ['Chrome','ChromeHeadless'],
     singleRun: true,
   });
 };
