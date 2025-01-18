@@ -20,5 +20,5 @@ jobs:
       - name: npm install
         run: npm ci
 
-      - name: build aplication
+      - name: build application
         run: npm run build

@@ -1,0 +1,24 @@
+name: Format
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: set up node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 23
+
+      - name: npm install
+        run: npm ci
+
+      - name: format application
+        run: npm run format-all:check
