@@ -20,5 +20,13 @@ jobs:
       - name: npm install
         run: npm ci
 
-      - name: unit tests
-        run: npm run test
+       - name: Install Chrome dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo dpkg -i google-chrome-stable_current_amd64.deb
+          sudo apt --fix-broken install -y
+
+      - name: Run unit tests
+        run: npm run test -- --watch=false --browsers=ChromeHeadless
