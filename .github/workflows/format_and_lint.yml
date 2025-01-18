@@ -1,4 +1,4 @@
-name: Format
+name: Format & Lint
 
 on:
   pull_request:
@@ -22,3 +22,6 @@ jobs:
 
       - name: format application
         run: npm run format-all:check
+
+      - name: lint application
+        run: npm run lint
