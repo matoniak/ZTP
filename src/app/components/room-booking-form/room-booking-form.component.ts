@@ -66,7 +66,7 @@ export class RoomBookingFormComponent {
   constructor(private gameRoomBookingService: GameRoomBookingService) {}
 
   bookRoom() {
-    if (this.bookRoomForm.valid) return console.log('form not valid');
+    if (!this.bookRoomForm.valid) return console.log('form not valid');
 
     const formValue: RoomBookingItem = this.bookRoomForm.value as RoomBookingItem;
 
@@ -92,33 +92,39 @@ export class RoomBookingFormComponent {
   editRoom() {
     this.showBookPanel = true;
 
-    if (this.bookRoomForm.valid) return console.log('form not valid');
+    if (!this.bookRoomForm.valid) return console.log('form not valid');
 
-    // const payload: RoomBookingItem = {
-    //   name: this.bookRoomForm.patchValue()
-    //   surname: this.bookRoomForm.patchValue()
-    //   email: this.bookRoomForm.patchValue()
-    //   startDate: this.bookRoomForm.patchValue()
-    //   endDate: this.bookRoomForm.patchValue()
-    //   pricingPlans: this.bookRoomForm.patchValue()
-    // };
+    const formValue: RoomBookingItem = this.bookRoomForm.value as RoomBookingItem;
 
-    // this.gameRoomBookingService.editBooking(id).subscribe({
-    //   next: response => {
-    //     console.log('Booking successfully edited!', response);
-    //   },
-    //   error: error => {
-    //     console.error('Error occurred:', error);
-    //   },
-    // });
+    const payload: RoomBookingItem = {
+      name: formValue.name,
+      surname: formValue.surname,
+      email: formValue.email,
+      startDate: formValue.startDate,
+      endDate: formValue.endDate,
+      pricingPlans: this.setPlaningPlan(this.value) || undefined,
+    };
+
+    this.gameRoomBookingService.editBooking(payload).subscribe({
+      next: response => {
+        console.log('Booking successfully edited!', response);
+        this.showBookPanel = false;
+      },
+      error: error => {
+        console.error('Error occurred:', error);
+      },
+    });
   }
 
-  deleteRoom() {
+  deleteRoom(){//id: number) {
     this.showBookPanel = true;
+
+    // if (!id) return console.log('No booking id provided');
 
     // this.gameRoomBookingService.deleteBookingById(id).subscribe({
     //   next: response => {
     //     console.log('Booking successfully Deleted!', response);
+    //     this.showBookPanel = false;
     //   },
     //   error: error => {
     //     console.error('Error occurred:', error);
