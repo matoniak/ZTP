@@ -4,7 +4,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   selector: 'page-footer',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [],
   templateUrl: './footer.component.html',
 })
 export class FooterComponent {}

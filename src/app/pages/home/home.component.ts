@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { AboutUsComponent } from '@components/about-us/about-us.component';
-import { FaqComponent } from '@components/faq/faq.component';
-import { FooterComponent } from '@components/footer/footer.component';
-import { HeroComponent } from '@components/hero/hero.component';
-import { JoinUsComponent } from '@components/join-us/join-us.component';
-import { NavBarComponent } from '@components/nav-bar/nav-bar.component';
-import { OfferComponent } from '@components/offer/offer.component';
-import { PricingComponent } from '@components/pricing/pricing.component';
-import { ScrollToTopButtonComponent } from '@components/scroll-to-top-button/scroll-to-top-button.component';
+import { AboutUsComponent } from '@components-ui/about-us/about-us.component';
+import { FaqComponent } from '@components-ui/faq/faq.component';
+import { FooterComponent } from '@components-ui/footer/footer.component';
+import { HeroComponent } from '@components-ui/hero/hero.component';
+import { JoinUsComponent } from '@components-ui/join-us/join-us.component';
+import { NavBarComponent } from '@components-feat/nav-bar/nav-bar.component';
+import { OfferComponent } from '@components-ui/offer/offer.component';
+import { PricingComponent } from '@components-ui/pricing/pricing.component';
+import { ScrollToTopButtonComponent } from '@components-feat/scroll-to-top-button/scroll-to-top-button.component';
 
 const components = [
   NavBarComponent,

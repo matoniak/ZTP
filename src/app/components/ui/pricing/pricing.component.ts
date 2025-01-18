@@ -1,4 +1,4 @@
-import { RoomBookingFormComponent } from '../room-booking-form/room-booking-form.component';
+import { RoomBookingFormComponent } from '@components-feat/room-booking-form/room-booking-form.component';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
