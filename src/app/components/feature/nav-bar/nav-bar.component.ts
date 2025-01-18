@@ -1,5 +1,4 @@
-import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { MenubarModule } from 'primeng/menubar';
 import { BadgeModule } from 'primeng/badge';
 import { MenuItem } from 'primeng/api';
@@ -31,7 +30,7 @@ const primeNgModules = [
   imports: [...primeNgModules, StyleClassModule, NgClass, RouterModule],
   templateUrl: './nav-bar.component.html',
 })
-export class NavBarComponent {
+export class NavBarComponent implements OnInit {
   items: MenuItem[] | undefined;
 
   isUserAuthorized = false;

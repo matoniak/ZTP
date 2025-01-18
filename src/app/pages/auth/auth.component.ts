@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '@app/services/user/user.service';
@@ -17,7 +17,7 @@ const primeNgModules = [CheckboxModule, ButtonModule, InputTextModule, CheckboxM
   imports: [...primeNgModules, ReactiveFormsModule, NgClass],
   templateUrl: './auth.component.html',
 })
-export class AuthPageComponent {
+export class AuthPageComponent implements OnInit {
   isUserAuthorized = false;
 
   readonly authForm = new FormGroup({

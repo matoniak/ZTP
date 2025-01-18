@@ -24,6 +24,7 @@ import { GameRoomBookingService } from '@services/game-room-booking/game-room-bo
 import { RoomBookingItem } from '@shared/interfaces/room-booking.interface';
 import { PricingPlans } from '@shared/enums/pricing-plans.enum';
 import { BookedRoomsComponent } from '../booked-rooms/booked-rooms.component';
+import { StateOption } from '@app/shared/interfaces/state-options.interface';
 
 const primeNgModules = [
   SelectButtonModule,
@@ -51,7 +52,7 @@ export class RoomBookingFormComponent implements OnInit {
 
   bookings: RoomBookingItem[] = [];
 
-  stateOptions: any[] = [
+  stateOptions: StateOption[] = [
     { label: 'Basic', value: 1 },
     { label: 'Premium', value: 2 },
     { label: 'Enterprise', value: 3 },

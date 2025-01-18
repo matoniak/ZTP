@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { SelectButton } from 'primeng/selectbutton';
-import { TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
+import { LanguageStateOption } from '@app/shared/interfaces/language-state-options.interface';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -17,7 +17,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   templateUrl: './language-switcher.component.html',
 })
 export class LanguageSwitcherComponent {
-  stateOptions: any[] = [
+  languageOptions: LanguageStateOption[] = [
     { label: 'Polish', value: 'pl' },
     { label: 'English', value: 'en' },
   ];
@@ -25,10 +25,4 @@ export class LanguageSwitcherComponent {
   readonly languageForm = new FormGroup({
     value: new FormControl('english'),
   });
-
-  //constructor(private translate: TranslateService) {}
-
-  switchLanguage(lang: 'en' | 'pl') {
-    //this.translate.use(lang);
-  }
 }
