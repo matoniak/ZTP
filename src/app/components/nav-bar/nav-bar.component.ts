@@ -10,7 +10,8 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
 import { MenuModule } from 'primeng/menu';
 import { navbarLinks } from '@app/shared/constants/nav-bar-items';
 import { ButtonModule } from 'primeng/button';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { UserService } from '@app/services/user/user.service';
 
 const primeNgModules = [
   MenubarModule,
@@ -25,7 +26,7 @@ const primeNgModules = [
   selector: 'nav-bar',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [...primeNgModules, StyleClassModule, NgClass, RouterModule, LanguageSwitcherComponent],
+  imports: [...primeNgModules, StyleClassModule, NgClass, RouterModule],
   templateUrl: './nav-bar.component.html',
 })
 export class NavBarComponent {
@@ -35,7 +36,20 @@ export class NavBarComponent {
 
   isUserLoggedIn = false;
 
+  constructor(
+    private userService: UserService,
+    private router: Router
+  ) {}
+
   ngOnInit() {
     this.items = navbarLinks;
+
+    this.userService.isUserAuthorizedState$.subscribe(value => (this.isUserAuthorized = value));
+  }
+
+  signOut() {
+    this.isUserAuthorized = false;
+
+    this.router.navigate(['/authorize']);
   }
 }
