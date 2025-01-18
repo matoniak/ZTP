@@ -1,0 +1,9 @@
+@if (showButton) {
+  <p-button
+    (click)="scrollToTop()"
+    icon="pi pi-arrow-up"
+    size="large"
+    class="scroll-to-top-btn"
+    [class.visible]="showButton"
+    [rounded]="true"></p-button>
+}

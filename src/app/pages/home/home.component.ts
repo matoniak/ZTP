@@ -7,6 +7,7 @@ import { JoinUsComponent } from '@components/join-us/join-us.component';
 import { NavBarComponent } from '@components/nav-bar/nav-bar.component';
 import { OfferComponent } from '@components/offer/offer.component';
 import { PricingComponent } from '@components/pricing/pricing.component';
+import { ScrollToTopButtonComponent } from '@components/scroll-to-top-button/scroll-to-top-button.component';
 
 const components = [
   NavBarComponent,
@@ -17,6 +18,7 @@ const components = [
   OfferComponent,
   PricingComponent,
   FooterComponent,
+  ScrollToTopButtonComponent,
 ];
 
 @Component({
@@ -32,6 +34,7 @@ const components = [
       <offer />
       <pricing />
       <faq />
+      <scroll-to-top-button />
     </main>
     <page-footer />`,
 })

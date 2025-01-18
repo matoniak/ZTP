@@ -1,0 +1,15 @@
+.validation-error {
+  color: var(--p-red-300);
+  margin-bottom: 1rem;
+}
+
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.scroll-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+}

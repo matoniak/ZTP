@@ -17,7 +17,7 @@ const primeNgModules = [CheckboxModule, ButtonModule, InputTextModule, CheckboxM
   templateUrl: './auth.component.html',
 })
 export class AuthPageComponent {
-  isUserAuthorized: boolean = false;
+  isUserAuthorized = false;
 
   readonly authForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
