@@ -37,7 +37,7 @@
             <button
               pButton
               pRipple
-              (click)="delete.emit()"
+              (click)="delete.emit($event)"
               label="Delete"
               aria-label="Delete"
               icon="pi pi-trash"
@@ -56,8 +56,10 @@
           style="border-radius: 10px">
           <i class="pi pi-lock text-4xl text-blue-500"></i>
         </div>
-        <div class="text-700 text-xl mt-2 mb-4 text-center line-height-3">
-          You don't have any reservation
+        <div
+          class="text-700 text-xl mt-2 mb-4 text-center line-height-3"
+          data-role="booked-rooms-empty-response">
+          You don’t have any reservation
         </div>
       </p-card>
     </div>
