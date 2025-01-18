@@ -20,9 +20,17 @@
       <input
         id="email"
         type="text"
+        [formControl]="authForm.controls.email"
         placeholder="Email address"
         pInputText
+        [ngClass]="{
+          'ng-invalid ng-dirty': authForm.controls.email.invalid && authForm.controls.email.touched,
+        }"
         class="w-full mb-3" />
+
+      @if (authForm.controls.email.invalid && authForm.controls.email.touched) {
+        <div class="validation-error">email is required</div>
+      }
 
       <label
         for="password"
@@ -32,9 +40,18 @@
       <input
         id="password"
         type="password"
+        [formControl]="authForm.controls.password"
         placeholder="Password"
         pInputText
+        [ngClass]="{
+          'ng-invalid ng-dirty':
+            authForm.controls.password.invalid && authForm.controls.password.touched,
+        }"
         class="w-full mb-3" />
+
+      @if (authForm.controls.password.invalid && authForm.controls.password.touched) {
+        <div class="validation-error">proper password is required</div>
+      }
 
       <div class="flex align-items-center justify-content-between mb-6">
         <div class="flex align-items-center">
@@ -56,7 +73,7 @@
       <button
         pButton
         pRipple
-        routerLink=""
+        (click)="signIn()"
         label="Sign In"
         aria-label="Sign In"
         icon="pi pi-user"

@@ -30,13 +30,21 @@
     </a>
   </ng-template>
   <ng-template #end>
-    <language-switcher class="mr-3" />
-
     @if (isUserAuthorized) {
-      <p-avatar
-        image="./assets/images/avatar.png"
-        class="mr-2"
-        shape="circle" />
+      <div class="container gap-2">
+        <button
+          pButton
+          pRipple
+          (click)="signOut()"
+          label="Sign out"
+          aria-label="Sign out"
+          icon="pi pi-user-plus"
+          class="m-3"></button>
+        <p-avatar
+          size="large"
+          image="./assets/images/avatar.png"
+          shape="circle" />
+      </div>
     } @else {
       <button
         pButton
@@ -45,15 +53,7 @@
         label="Sign in"
         aria-label="Sign In"
         icon="pi pi-user"
-        class="mr-3 p-button-outlined"></button>
-
-      <button
-        pButton
-        pRipple
-        routerLink="/authorize"
-        label="Sign out"
-        aria-label="Sign out"
-        icon="pi pi-user-plus"></button>
+        class="mr-2 p-button-outlined"></button>
     }
   </ng-template>
 </p-menubar>
