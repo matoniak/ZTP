@@ -6,8 +6,9 @@ import { UserService } from '@app/services/user/user.service';
 import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
 import { InputTextModule } from 'primeng/inputtext';
+import { Image } from 'primeng/image';
 
-const primeNgModules = [CheckboxModule, ButtonModule, InputTextModule, CheckboxModule];
+const primeNgModules = [CheckboxModule, ButtonModule, InputTextModule, CheckboxModule, Image];
 
 @Component({
   selector: 'auth',

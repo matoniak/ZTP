@@ -3,6 +3,10 @@
   margin-bottom: 1rem;
 }
 
+.hero-image {
+  clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%);
+}
+
 .scroll-to-top-btn {
   position: fixed;
   bottom: 20px;

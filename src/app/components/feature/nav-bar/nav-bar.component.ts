@@ -12,6 +12,7 @@ import { navbarLinks } from '@app/shared/constants/nav-bar-items';
 import { ButtonModule } from 'primeng/button';
 import { Router, RouterModule } from '@angular/router';
 import { UserService } from '@app/services/user/user.service';
+import { Image } from 'primeng/image';
 
 const primeNgModules = [
   MenubarModule,
@@ -20,6 +21,7 @@ const primeNgModules = [
   AvatarGroupModule,
   MenuModule,
   ButtonModule,
+  Image,
 ];
 
 @Component({
