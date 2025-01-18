@@ -1,4 +1,4 @@
-name: Build
+name: Format
 
 on:
   pull_request:
@@ -20,13 +20,5 @@ jobs:
       - name: npm install
         run: npm ci
 
-      - name: build aplication
-        run: npm run build
-
-      - name: install Chromium
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y chromium-browser
-
-      - name: run unit tests
-        run: npm run test -- --watch=false --browsers=Chrome,ChromeHeadless
+      - name: format application
+        run: npm run format-all:check
