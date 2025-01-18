@@ -13,7 +13,14 @@ module.exports = function (config) {
       subdir: '.',
       reporters: [{ type: 'html' }, { type: 'text-summary' }],
     },
-    browsers: ['Chrome'],
+    files: ['src/app/**/*.spec.ts'],
+    browsers: ['Chrome', 'ChromeHeadless'],
+    customLaunchers: {
+      ChromeHeadlessCI: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox', '--disable-gpu'],
+      },
+    },
     singleRun: true,
   });
 };

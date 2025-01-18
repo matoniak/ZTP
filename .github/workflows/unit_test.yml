@@ -1,0 +1,32 @@
+name: Unit tests
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: set up node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 23
+
+      - name: npm install
+        run: npm ci
+
+      - name: Install Chrome dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo dpkg -i google-chrome-stable_current_amd64.deb
+          sudo apt --fix-broken install -y
+
+      - name: Run unit tests
+        run: npm run test -- --watch=false --browsers=ChromeHeadless
